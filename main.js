@@ -1,40 +1,32 @@
-// function checkAnagram(word1, word2) {
+// Sis ir viens variants ar jQuery!!!
 
-//     if (word1.toLowerCase().split("").sort().join("") === word2.toLowerCase().split("").sort().join("")) {
-//         return 'true';
-//     } else {
-//         return 'false';
-//     }
-// }
-
-
-// console.log(checkAnagram('ADmpSma', 'mamapsd'));
-
-$('#btn2').on('click', function(){
-    $('.changable-paragraph').text('baz');
-    $('.changable-paragraph').css('color', 'red');
+$('#btn1').click(function () {
+    var $changed = $('#change');
+    if ($changed.text == 'foo') {
+        $changed.text('baz');
+    } else {
+        $changed.text('foo');
+    }
 });
 
-function changeText() {
-    
-    if(document.getElementById('change').innerHTML == 'foo'){
-        document.getElementById('change').innerHTML = 'baz';
-    }else{
-        document.getElementById('change').innerHTML = 'foo';
+// Sis ir otrs variants ar parasto (Vanilla JS) JavaScript.
+document.querySelector('#btn2').addEventListener('click', function () {
+    var butt = document.querySelector('#btn2');
+    if (butt.innerText == 'foo') {
+        butt.innerText = 'bar';
+    } else if (butt.innerText == 'bar') {
+        butt.innerText = 'baz';
+    } else {
+        butt.innerText = 'foo';
     }
 
-}
-function changeText2(){
+});
 
-    if(document.getElementById('btn2').innerHTML == 'foo'){
-
-        document.getElementById('btn2').innerHTML = 'bar';
-
-    }else if(document.getElementById('btn2').innerHTML == 'bar'){
-
-        document.getElementById('btn2').innerHTML = 'baz';
-        
-    }else
-        document.getElementById('btn2').innerHTML = 'foo';
-    
-}
+function checkAnagramm(w1, w2) {
+    if (w1.toLowerCase().split("").sort().join("") == w2.toLowerCase().split("").sort().join("")) {
+        return 'true';
+    } else {
+        return 'false';
+    }
+};
+console.log(checkAnagramm('ABeCDw', 'Wcabed'));
